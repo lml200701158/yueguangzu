@@ -1,0 +1,6 @@
+{
+  "name": "yueguangzu-web",
+  "private": true,
+  "type": "module",
+  "description": "月光族 PWA 网页版（零依赖）"
+}

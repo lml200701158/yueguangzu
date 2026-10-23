@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#2E7D32"/>
+  <circle cx="256" cy="256" r="168" fill="#E8F5E9"/>
+  <text x="256" y="256" font-family="PingFang SC, Helvetica, sans-serif" font-size="220" font-weight="700"
+        fill="#2E7D32" text-anchor="middle" dominant-baseline="central">¥</text>
+</svg>

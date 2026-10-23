@@ -1,0 +1,418 @@
+/* 配色与卡片样式对齐 Android 版 ui/AppTheme.kt（单一数据源） */
+
+:root {
+  --primary: #2e7d32;
+  --primary-container: #e8f5e9;
+  --background: #f6fbf6;
+  --text-primary: #212121;
+  --text-secondary: #424242;
+  --text-tertiary: #616161;
+  --text-muted: #757575;
+  --text-faint: #9e9e9e;
+  --surface-dim: #f5f5f5;
+  --caution-text: #f9a825;
+  --caution-bg: #fff8e1;
+  --warning-text: #c62828;
+  --warning-deep: #b71c1c;
+  --warning-bg: #ffebee;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+}
+
+.page {
+  padding: 0 28px 24px;
+}
+
+/* ---------- 顶部导航 ---------- */
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 4px 8px;
+  min-height: 48px;
+}
+
+.top-bar h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.top-bar .actions {
+  position: absolute;
+  right: 8px;
+  top: 0;
+  display: flex;
+}
+
+.back-btn {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.back-btn svg {
+  display: block;
+}
+
+/* ---------- 文本 ---------- */
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin: 48px 0 0;
+  text-align: center;
+}
+
+.title.warning {
+  color: var(--warning-text);
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--text-faint);
+  margin: 6px 0 0;
+  text-align: center;
+}
+
+.subtitle.muted {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.section-label {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin: 24px 0 8px;
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--text-faint);
+  margin: 4px 0 0;
+}
+
+.hint.center {
+  text-align: center;
+}
+
+/* ---------- 卡片 ---------- */
+
+.card {
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  margin-top: 28px;
+}
+
+.card.primary {
+  background: var(--primary-container);
+}
+
+.card.caution {
+  background: var(--caution-bg);
+}
+
+.card.warning {
+  background: var(--warning-bg);
+}
+
+.card .card-label {
+  font-size: 14px;
+  color: var(--primary);
+}
+
+.card .card-amount {
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--primary);
+  margin-top: 6px;
+}
+
+.card .card-status {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card .card-status.healthy {
+  color: var(--primary);
+}
+
+.card .card-status.caution {
+  color: var(--caution-text);
+}
+
+.card .card-status.warning {
+  color: var(--warning-text);
+}
+
+.card .card-hint {
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.card .card-hint.healthy {
+  color: var(--primary);
+}
+
+.card .card-hint.caution {
+  color: var(--caution-text);
+}
+
+.card .card-hint.warning {
+  color: var(--warning-text);
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  margin-top: 16px;
+}
+
+.stat-row .label {
+  font-size: 14px;
+  color: var(--text-tertiary);
+}
+
+.stat-row .value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.card .warn-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--warning-text);
+}
+
+.card .warn-body {
+  font-size: 13px;
+  color: var(--warning-deep);
+  margin-top: 6px;
+}
+
+/* ---------- 表单 ---------- */
+
+input[type='text'],
+input[type='date'] {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  border: 1px solid var(--text-faint);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--text-primary);
+  outline: none;
+}
+
+input[type='text']:focus,
+input[type='date']:focus {
+  border-color: var(--primary);
+}
+
+input::placeholder {
+  color: var(--text-faint);
+}
+
+.option-row {
+  display: flex;
+  gap: 12px;
+}
+
+.option {
+  flex: 1;
+  border-radius: 12px;
+  background: var(--surface-dim);
+  border: 1px solid transparent;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.option .opt-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.option .opt-desc {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-top: 4px;
+}
+
+.option.selected {
+  background: var(--primary-container);
+  border-color: var(--primary);
+}
+
+.option.selected .opt-title {
+  color: var(--primary);
+}
+
+input[type='range'] {
+  width: 100%;
+  accent-color: var(--primary);
+}
+
+.mult-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary);
+  margin: 4px 0 0;
+}
+
+/* ---------- 按钮 ---------- */
+
+.btn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 24px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 28px;
+}
+
+.btn:disabled {
+  background: var(--surface-dim);
+  color: var(--text-faint);
+  cursor: default;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 15px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.btn-danger-text {
+  background: none;
+  border: none;
+  color: var(--warning-text);
+  font-size: 15px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* ---------- 历史 ---------- */
+
+.history-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.history-row .date {
+  font-size: 15px;
+  color: var(--text-tertiary);
+  width: 48px;
+}
+
+.history-row .amount {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  flex: 1;
+  text-align: center;
+}
+
+.history-row .emoji {
+  font-size: 16px;
+  width: 32px;
+  text-align: center;
+}
+
+.history-row .delete-btn {
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  font-size: 18px;
+  padding: 4px 6px;
+  cursor: pointer;
+  width: 32px;
+}
+
+.empty {
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 14px;
+  margin-top: 40vh;
+  white-space: pre-line;
+}
+
+/* ---------- 弹窗 ---------- */
+
+.modal-mask {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  width: min(300px, 84vw);
+}
+
+.modal h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.modal p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: var(--text-tertiary);
+}
+
+.modal .modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 12px;
+}
